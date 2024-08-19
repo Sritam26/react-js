@@ -25,7 +25,17 @@ function App() {
 
   }
 const[mode,setmode]=useState("light");
-const toggle=()=>{
+const removeBodyClasses = ()=>{
+  document.body.classList.remove('bg-light')
+  document.body.classList.remove('bg-dark')
+  document.body.classList.remove('bg-warning')
+  document.body.classList.remove('bg-danger')
+  document.body.classList.remove('bg-success') 
+}
+const toggle=(cls)=>{
+  removeBodyClasses();
+  console.log(cls)
+  document.body.classList.add('bg-'+cls)
   if(mode==='light'){
     setmode('dark');
     document.body.style.backgroundColor='#042743'

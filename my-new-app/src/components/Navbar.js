@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 export default function Navbar(props) {
   return (
     <div>
@@ -19,7 +18,7 @@ export default function Navbar(props) {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon-primary" style={{color:"blue"}}>drop</span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -45,6 +44,14 @@ export default function Navbar(props) {
                 Search
               </button>
             </form>
+          </div>
+          <div className="d-flex">
+          <div className="bg-primary rounded mx-2" onClick={()=>{props.toggle('primary')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
+                        <div className="bg-danger rounded mx-2" onClick={()=>{props.toggle('danger')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
+                        <div className="bg-success rounded mx-2" onClick={()=>{props.toggle('success')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
+                        <div className="bg-warning rounded mx-2" onClick={()=>{props.toggle('warning')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
+                        <div className="bg-light rounded mx-2" onClick={()=>{props.toggle('light')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
+                        <div className="bg-dark rounded mx-2" onClick={()=>{props.toggle('dark')}} style={{height: '30px', width:'30px', cursor: 'pointer'}}></div>
           </div>
           <div className={`form-check form-switchtext-${props.mode==='light'?'dark':'light'}`} style={{color:'blue'}} >
             <input
